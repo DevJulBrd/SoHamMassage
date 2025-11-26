@@ -1,0 +1,41 @@
+name: Build and Deploy SoHamMassage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Utiliser Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Builder le projet
+        run: npm run build
+
+      - name: Lister les fichiers générés (debug)
+        run: find build -maxdepth 2 -type f | head -n 30
+
+      - name: Déploiement FTP (build -> serveur)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # port: ${{ secrets.FTP_PORT }} # optionnel (par défaut 21)
+          protocol: ftps
+          local-dir: build
+          server-dir: /www/    # à adapter selon ton hébergeur (souvent /www, /public_html ou /)
+
