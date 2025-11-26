@@ -1,0 +1,9 @@
+.gallery-container {
+    --slider-h: 255px;
+}
+
+@media (min-width: 1024px) {
+  .gallery-container { 
+    --slider-h: 500px; 
+}
+}

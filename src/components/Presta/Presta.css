@@ -1,0 +1,103 @@
+.presta-section {
+    background: var(--white);
+    padding-bottom: 70px;
+}
+
+.presta-title {
+    color: var(--violet);
+    text-align: center;
+    padding: 70px 0 50px 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.presta-cards-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.presta-card-link {
+    text-decoration: none;
+}
+
+.presta-card {
+    box-shadow: 0 4px 7px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+}
+
+.presta-card-image {
+    width: 100%;
+    height: 228px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.presta-card-infos {
+    padding: 15px;
+}
+
+.presta-card-title {
+    font-family: var(--titleFont);
+    font-size: var(--mobileh2);
+    line-height: var(--lineHeighth2);
+    color: var(--violet);
+    margin: 0 0 10px 0;
+}
+
+.presta-card-subtitle {
+    font-family: var(--subtitleFont);
+    font-size: var(--mobileBody);
+    line-height: var(--lineHeightBody);
+    color: var(--mauve);
+    margin: 0 0 10px 0;
+}
+
+.presta-card-description {
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;  
+    -webkit-line-clamp: 4;         
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--textFont);
+    font-size: var(--mobileBody);
+    line-height: var(--lineHeightBody);
+    color: var(--black);
+}
+
+.presta-price-row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.presta-card-price-amount, .presta-card-price-duration {
+    font-family: var(--subtitleFont);
+    font-size: var(--mobileBody);
+    line-height: var(--lineHeightBody);
+    color: var(--violet);
+}
+
+@media screen and (min-width: 1024px) {
+  .presta-cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .presta-card-link {
+    width: 30%;
+    transition: all 300ms ease-in-out;
+  }
+
+  .presta-card-link:hover {
+    transform: scale(1.05);
+  }
+
+  .presta-card {
+    height: 100%;
+  }
+}

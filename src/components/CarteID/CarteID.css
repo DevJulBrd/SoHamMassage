@@ -1,0 +1,127 @@
+.carteID-title {
+    font-family: var(--titleFont);
+    font-size: var(--mobileh1);
+    line-height: var(--lineHeighth1);
+    text-transform: uppercase;
+    color: var(--violet);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.carteID-subtitle {
+    font-family: var(--subtitleFont);
+    font-size: var(--mobileh2);
+    line-height: var(--lineHeighth2);
+    color: var(--mauve);
+    text-align: start;
+    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.carteID-cathegory {
+    font-family: var(--subtitleFont);
+    font-size: var(--mobiletext);
+    line-height: var(--lineHeightBody);
+    text-transform: uppercase;
+    color: var(--mauve);
+    text-align: start;
+    margin-top: 30px;    
+    width: 90%;
+    margin: 30px auto 0 auto;
+}
+
+.carteID-description {
+    font-family: var(--textFont);
+    font-size: var(--mobileBody);
+    line-height: var(--lineHeightBody);
+    color: var(--black);
+    text-align: start;
+    margin-top: 10px;    
+    width: 90%;
+    margin: 10px auto 40px auto;
+}
+
+.carteID-bienfait {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.carteID-point {
+    color: var(--violet);
+    margin-right: 8px;
+    font-size: 50px;
+}
+
+.carteID-price-row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.carteID-price {
+    color: var(--violet);
+}
+
+.carteID-duration {
+    text-align: end;
+}
+
+.carteID-discount {
+    text-align: center;
+    text-decoration-line: line-through; 
+    text-decoration-color: var(--rosePale); 
+    text-decoration-thickness: 3px;
+    text-decoration-style: solid; 
+    text-decoration-skip-ink: auto;
+}
+
+/* -------- Desktop uniquement : on active l’accordéon -------- */
+@media (min-width: 1024px) {
+  .carteID-cathegory.is-toggle {
+    position: relative;
+  }
+
+    /* Optionnel : petit chevron visuel */
+  .carteID-cathegory.is-toggle::after {
+    content: "▾";
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: transform .3s ease;
+  }
+
+  .carteID-collapse.open ~ .carteID-cathegory.is-toggle::after { transform: rotate(0deg); }
+
+  .carteID-cathegory.is-toggle {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Conteneur collapsible : fermé par défaut en desktop,
+     mais on laisse le flux en mobile (hors media query) */
+  .carteID-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+
+  .carteID-collapse.open {
+    /* Valeur suffisamment grande pour contenir le contenu.
+       On utilise une "grande" valeur plutôt que "auto" pour l’animation. */
+    max-height: 2000px;
+  }
+
+  /* Quand fermé, on peut réduire la marge des paragraphes internes pour éviter de voir un espace */
+  .carteID-collapse:not(.open) .carteID-description {
+    margin: 0 auto;
+  }
+
+  /* Chevrons : on pivote quand c’est ouvert */
+  .carteID-cathegory.is-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+}

@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Couleurs Principales */
+  --rosePale: #f5cbe8;
+  --roseFlachy: #ec9ded;
+  --roseFonce: #c880b7;
+  --violet: #9f6ba0;
+  --mauve: #4a2040;
+
+  /* Couleurs Neutres */
+  --white: #f9fafb;
+  --black: #222222;
+
+  /* Polices */
+  --titleFont: "Archivo Black", sans-serif;
+  --subtitleFont: "Fjalla One", sans-serif;
+  --textFont: "Story Script", sans-serif;
+
+  /* Tailles de police */
+  --mobileh1: 32px;
+  --mobileh2: 24px;
+  --mobileBody: 16px;
+  --mobileSmall: 10px;
+
+  --tableth1: 40px;
+  --tableth2: 28px;
+  --tabletBody: 18px;
+  --tabletSmall: 12px;
+
+  --desktoph1: 48px;
+  --desktoph2: 32px;
+  --desktopBody: 20px;
+  --desktopSmall: 14px;
+
+  --lineHeighth1: 1.2;
+  --lineHeighth2: 1.3;
+  --lineHeightBody: 1.65;
+  --lineHeightSmall: 1.45;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body {
+  margin: 0;
+}
+
+.titleh1mobile {
+  font-family: var(--titleFont);
+  font-size: var(--mobileh1);
+  line-height: var(--lineHeighth1);
+}
+
+.titleh2mobile {
+  font-family: var(--subtitleFont);
+  font-size: var(--mobileh2);
+  line-height: var(--lineHeighth2);
+}
+
+.textmobile {
+  font-family: var(--textFont);
+  font-size: var(--mobileBody);
+  line-height: var(--lineHeightBody);
+}
+
+.smallmobile {
+  font-family: var(--textFont);
+  font-size: var(--mobileSmall);
+  line-height: var(--lineHeightSmall);
+}
+
+@media screen and (min-width: 1024px) {
+  .titleh1mobile {
+    font-family: var(--titleFont);
+    font-size: var(--desktoph1);
+    line-height: var(--lineHeighth1);
+  }
+
+  .titleh2mobile {
+    font-family: var(--subtitleFont);
+    font-size: var(--desktoph2);
+    line-height: var(--lineHeighth2);
+  }
+
+  .textmobile {
+    font-family: var(--textFont);
+    font-size: var(--desktopBody);
+    line-height: var(--lineHeightBody);
+  }
+
+  .smallmobile {
+    font-family: var(--textFont);
+    font-size: var(--desktopSmall);
+    line-height: var(--lineHeightSmall);
+  }
 }

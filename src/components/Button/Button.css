@@ -1,0 +1,33 @@
+.custom-button {
+  width: 300px;
+}
+
+.button-inner {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 15px;
+  border: none;
+  background-color: var(--violet);
+  color: var(--rosePale);
+  text-transform: uppercase;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 2px 4px rgba(0,0,0,.06);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.button-inner:hover {
+  box-shadow:
+    0 4px 8px rgba(0,0,0,.10),
+    0 8px 24px rgba(0,0,0,.08);
+  transform: scale(1.1);
+}
+
+.button-inner:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,.12),
+    0 0 0 1px rgba(0,0,0,.06);
+}
+

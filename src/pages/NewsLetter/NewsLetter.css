@@ -1,0 +1,22 @@
+.news-title {
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    color: var(--violet);
+    text-transform: uppercase;
+}
+
+.news-section {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .news-title {
+    margin-top: 100px;
+  }
+}

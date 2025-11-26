@@ -1,0 +1,77 @@
+/* Base héritée (tes styles précédents restent valables) */
+.comments {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--rosePale);
+  border: 1px solid #e8ebf0;
+}
+
+.comments__title {
+  margin: 0 0 .75rem 0;
+}
+
+.comments__count { font-weight: 600; color: #5b6b86; }
+.comments__empty { margin: 0; color: #6b7280; }
+
+.comments__item {
+  width: min(720px, 92%);    /* carte lisible, centrée */
+  margin: 0 auto;            /* sécurité de centrage */
+  background: #fff;
+  border: 1px solid #e8ebf0;
+  border-radius: 12px;
+  padding: .9rem 1rem;
+}
+
+.comments__header {
+  display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem;
+}
+.comments__avatar {
+  width: 1.6rem; height: 1.6rem; display: inline-grid; place-items: center;
+  border-radius: 50%; background: #eef2ff; font-size: .9rem;
+}
+.comments__author { font-family: var(--subtitleFont); font-weight: 600; color: var(--violet); }
+.comments__content { margin: 0; line-height: 1.55; color: #1f2937; }
+
+/* --- Carrousel horizontal --- */
+.comments--carousel { position: relative; }
+.cc-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 130px;
+}
+.cc-track {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform .6s ease; /* glisse de droite -> gauche */
+  will-change: transform;
+}
+.cc-track.no-anim { transition: none; } 
+.cc-slide {
+  flex: 0 0 100%;          /* 1 slide = 100% de la largeur */
+  max-width: 100%;
+  padding: 0; 
+  display: flex;
+  justify-content: center;   /* centre horizontal */
+  align-items: center;       /* centre vertical si la viewport a une hauteur */
+  padding: 0;               /* le padding est dans .comments__item */
+}
+
+/* Contrôles (optionnels) */
+.cc-controls {
+  position: absolute;
+  inset: auto 0 -0.5rem 0;
+  display: flex; gap: .5rem; justify-content: center;
+}
+.cc-btn {
+  border: 1px solid #e5e7eb; background: #fff;
+  padding: .15rem .5rem; border-radius: 8px; cursor: pointer;
+}
+.cc-btn:hover { background: #f3f4f6; }
+
+/* Accessibilité : si l’utilisateur préfère moins de mouvements */
+@media (prefers-reduced-motion: reduce) {
+  .cc-track { transition: none; }
+}

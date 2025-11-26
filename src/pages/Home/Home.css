@@ -1,0 +1,35 @@
+.home-section {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.home-title {
+    color: var(--violet);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.home-vod {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .home-title {
+        width: 100%;
+        text-align: center;
+        font-family: var(--titleFont);
+        font-size: var(--desktoph1);
+        line-height: var(--lineHeighth1);
+    }
+
+    .home-vod {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

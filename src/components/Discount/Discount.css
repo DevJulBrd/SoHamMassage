@@ -1,0 +1,23 @@
+.discount-container {
+    background: var(--violet);
+    width: 80%;
+    padding: 20px;
+    border-radius: 100px;
+    margin: 30px auto;
+}
+
+.dicount-title {
+    color: var(--rosePale);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.discoutn-text {
+    color: var(--white);
+    text-align: center;
+}
+
+.discount-special {
+    color: var(--rosePale);
+}
+
